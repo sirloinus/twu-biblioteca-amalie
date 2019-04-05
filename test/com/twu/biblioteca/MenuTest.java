@@ -33,11 +33,16 @@ public class MenuTest {
 
 
     @Test
-    public void callsBookListDisplayBooksGivenCorrectInput() {
+    public void displaysAllBooksWhenOptionSelected() {
         String message = "Displaying books...";
+        String bookList = "Book Title | Author | Publication Year \n" +
+                "Harry Potter and the Prisoner of Azkaban | JK Rowling | 1999 \n" +
+                "The Lord of the Rings | JRR Tolkien | 1954\n" +
+                "Sum | David Eagleman | 2009 \n";
         Assert.assertEquals(message, menu.selectOption(1));
-        // TODO: mock booklist so that can check if getBooks was called
+        menu.selectOption(1);
 //        when(bookListMock.)
+
     }
 
     @Test

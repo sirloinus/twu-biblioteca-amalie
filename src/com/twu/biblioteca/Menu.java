@@ -21,9 +21,10 @@ public class Menu {
         switch(option) {
             case 1:
                 message = "Displaying books...";
-//                for(Book book: bookList.getBooks()){
-//                    System.out.println(book.title + " | " + book.author + " | " + book.date);
-//                }
+                for(Book book: bookList.getBookList()){
+                    System.out.println(book.getBookInfo());
+                    // System.out.println(book.getTitle() + " | " + book.getAuthor() + " | " + book.getYear());
+                }
                 break;
             case 2:
                 // BookList.checkoutBook();
