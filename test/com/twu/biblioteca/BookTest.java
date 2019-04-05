@@ -16,4 +16,10 @@ public class BookTest {
         Assert.assertSame(book.getAuthor(), "JK Rowling");
         Assert.assertSame(book.getYear(), "1999");
     }
+
+    @Test
+    public void returnsCorrectBookInfoAsString() {
+        String bookInfo = "Harry Potter and the Prisoner of Azkaban | JK Rowling | 1999\n";
+        Assert.assertEquals(bookInfo, book.getBookInfo());
+    }
 }

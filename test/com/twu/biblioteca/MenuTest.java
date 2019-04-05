@@ -2,12 +2,15 @@ package com.twu.biblioteca;
 
 import org.junit.Assert;
 import org.junit.Test;
+import static org.mockito.Mockito.*;
 
 public class MenuTest {
 
+
     Menu menu = new Menu();
     // CREATE MOCK BOOKLIST BookList BookList = { displayBooks: () => {} };
-    // BookList bookList = mock(BookList.class);
+
+    BookList bookListMock = mock(BookList.class);
 
     @Test
     public void displayMenu() {
@@ -18,8 +21,7 @@ public class MenuTest {
                 "5. Checkout a movie \n" +
                 "6. Return a movie \n" +
                 "7. Quit Biblioteca \n";
-        String actual = menu.displayMenu();
-        Assert.assertEquals(menuOptions, actual);
+        Assert.assertEquals(menuOptions, menu.displayMenu());
     }
 
     @Test
@@ -35,7 +37,7 @@ public class MenuTest {
         String message = "Displaying books...";
         Assert.assertEquals(message, menu.selectOption(1));
         // TODO: mock booklist so that can check if getBooks was called
-        // Assert.assertThat(verify(bookList).getBooks());
+//        when(bookListMock.)
     }
 
     @Test
