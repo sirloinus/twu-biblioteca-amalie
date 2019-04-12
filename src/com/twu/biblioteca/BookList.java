@@ -14,6 +14,10 @@ public class BookList {
         this.bookList.add(book);
     }
 
-
+    public void displayBooksInfo() {
+        for(Book book: bookList){
+            System.out.println(book.getBookInfo());
+        }
+    }
 
 }

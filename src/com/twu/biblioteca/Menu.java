@@ -1,8 +1,15 @@
 package com.twu.biblioteca;
 
+import java.util.Scanner;
+
 public class Menu {
 
-    private BookList bookList = new BookList();
+    public BookList bookList = new BookList();
+
+    public void start() {
+        displayMenu();
+        getUserInput();
+    }
 
     public String displayMenu() {
         String options = "1. View list of books \n" +
@@ -11,20 +18,31 @@ public class Menu {
                 "4. View list of movies \n" +
                 "5. Checkout a movie \n" +
                 "6. Return a movie \n" +
-                "7. Quit Biblioteca \n";;
+                "7. Quit Biblioteca \n";
         System.out.println(options);
         return options;
     }
 
+
+    public void getUserInput() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose an option");
+        String choice = scanner.nextLine();
+        try {
+            selectOption(Integer.parseInt(choice));
+        } catch(Exception e) {
+            System.out.println("Try again");
+            getUserInput();
+        }
+
+    }
+
     public String selectOption(int option) {
-        String message = "";
+        String message = " ";
         switch(option) {
             case 1:
                 message = "Displaying books...";
-                for(Book book: bookList.getBookList()){
-                    System.out.println(book.getBookInfo());
-                    // System.out.println(book.getTitle() + " | " + book.getAuthor() + " | " + book.getYear());
-                }
+                bookList.displayBooksInfo();
                 break;
             case 2:
                 // BookList.checkoutBook();
@@ -50,6 +68,8 @@ public class Menu {
                 message = "Please select a valid option!";
         }
         System.out.println(message);
+        System.out.println(" ");
+        displayMenu();
         return message;
     }
 
