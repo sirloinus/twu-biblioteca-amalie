@@ -7,11 +7,15 @@ public class BibliotecaApp {
         Book lotr = new Book("The Lord of the Rings", "JRR Tolkien", "1954");
         Book sum = new Book("Sum", "David Eagleman", "2009");
         BibliotecaApp biblioteca = new BibliotecaApp();
-        Menu menu = new Menu();
+        User user1 = new User();
+        BookList bookList = new BookList();
+        bookList.addBook(hp);
+        bookList.addBook(lotr);
+        bookList.addBook(sum);
+        Librarian librarian = new Librarian(bookList);
+        Menu menu = new Menu(bookList, librarian, user1);
         biblioteca.welcome();
-        menu.bookList.addBook(hp);
-        menu.bookList.addBook(lotr);
-        menu.bookList.addBook(sum);
+
         menu.start();
     }
 

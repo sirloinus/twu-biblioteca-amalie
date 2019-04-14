@@ -4,7 +4,15 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public BookList bookList = new BookList();
+    private BookList bookList;
+    private Librarian librarian;
+    private User user;
+
+    public Menu(BookList bookList, Librarian librarian, User user) {
+        this.bookList = bookList;
+        this.librarian = librarian;
+        this.user = user;
+    }
 
     public void start() {
         displayMenu();
@@ -48,8 +56,8 @@ public class Menu {
                 bookList.displayBooksInfo();
                 break;
             case 2:
-                // BookList.checkoutBook();
-                message = "Checking out book....";
+                message = "Thank you! Enjoy the book";
+                librarian.checkOutBook(user);
                 break;
             case 3:
                 message = "Returning book..";
@@ -72,7 +80,8 @@ public class Menu {
         }
         System.out.println(message);
         System.out.println(" ");
-        displayMenu();
+        this.displayMenu();
+        this.getUserInput();
         return message;
     }
 

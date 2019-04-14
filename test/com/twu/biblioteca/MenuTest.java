@@ -2,15 +2,15 @@ package com.twu.biblioteca;
 
 import org.junit.Assert;
 import org.junit.Test;
-import static org.mockito.Mockito.*;
+import org.mockito.Mock;
 
 public class MenuTest {
 
+    @Mock private User user = new User();
+    @Mock private BookList bookList = new BookList();
+    @Mock private Librarian librarian = new Librarian(bookList);
 
-    Menu menu = new Menu();
-    // CREATE MOCK BOOKLIST BookList BookList = { displayBooks: () => {} };
-
-    BookList bookListMock = mock(BookList.class);
+    Menu menu = new Menu(bookList, librarian, user);
 
     @Test
     public void displayMenu() {

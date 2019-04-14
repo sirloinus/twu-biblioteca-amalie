@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class BookList {
 
     public ArrayList<Book> bookList = new ArrayList<Book>();
-    private HashMap<String, Book> bookCollection;
+    public HashMap<String, Book> bookCollection;
 
     public BookList() {
         this.bookCollection = new HashMap<String, Book>();
@@ -43,5 +43,7 @@ public class BookList {
             System.out.println(book.getBookInfo());
         }
     }
+
+
 
 }
