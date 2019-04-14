@@ -34,7 +34,10 @@ public class Menu {
             System.out.println("Try again");
             getUserInput();
         }
+    }
 
+    public void quitApplication() {
+        System.exit(0);
     }
 
     public String selectOption(int option) {
@@ -62,7 +65,7 @@ public class Menu {
                 break;
             case 7:
                 message = "Quiting Biblioteca";
-                // System.exit(0);
+                quitApplication();
                 break;
             default:
                 message = "Please select a valid option!";

@@ -21,6 +21,15 @@ public class BookListTest {
     }
 
     @Test
+    public void removeBookToBookList() {
+        bookList.removeBook(hp.getTitle());
+        bookList.removeBook(lotr.getTitle());
+        bookList.removeBook(sum.getTitle());
+        int size = bookList.getBookList().size();
+        Assert.assertSame(0, size);
+    }
+
+    @Test
     public void displayBooksInfo() {
         String bookListDisplay = "Book Title | Author | Publication Year \n" +
                 "Harry Potter and the Prisoner of Azkaban | JK Rowling | 1999 \n" +
