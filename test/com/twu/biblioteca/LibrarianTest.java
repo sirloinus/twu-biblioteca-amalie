@@ -16,7 +16,7 @@ public class LibrarianTest {
     @Test
     public void checkoutBookIsTrueWhenBookIsCheckedOut() {
         testBook = mock(Book.class);
-        librarian.checkOutItem(user);
+
     }
 
     @Test

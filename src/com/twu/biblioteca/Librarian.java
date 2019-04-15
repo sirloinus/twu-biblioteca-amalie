@@ -14,26 +14,36 @@ public class Librarian {
     public void checkOutItem(User user) {
         // add book to user list of books
 
-        // change checked out status of book to true
         Book book = this.findBook();
-        boolean outcome = book.checkOutBook();
-        String message = outcome ? "Thank you! Enjoy the book." : "Book already checked out of library.";
-        System.out.println(message);
+        if(book != null) {
+            boolean outcome = book.checkOutBook();
+            checkoutMessage(outcome);
+        } else {
+            System.out.println("Cannot checkout book as it does not exist.");
+        }
     }
 
     public void returnItem(User user) {
         // remove book from user's books
 
-        // change checked out status of book to false
         Book book = this.findBook();
         if(book != null){
             boolean outcome = book.returnBook();
-            String message = !outcome ? "Successfully returned to library" : "Cannot return as book already in the library.";
-            System.out.println(message);
+            returnMessage(outcome);
         } else {
             System.out.println("Cannot return as book does not exist.");
             returnItem(user);
         }
+    }
+
+    private void returnMessage(boolean bool) {
+        String message = !bool ? "Successfully returned to library" : "Cannot return as book already in the library.";
+        System.out.println(message);
+    }
+
+    private void checkoutMessage(boolean bool) {
+        String message = bool ? "Thank you! Enjoy the book." : "Book already checked out of library.";
+        System.out.println(message);
     }
 
     private String getBookTitle() {
