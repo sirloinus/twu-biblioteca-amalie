@@ -32,7 +32,7 @@ public class Book {
 
     public String getBookInfo() {
 
-        return this.title + " | " + this.author + " | " + this.year + "\n";
+        return this.title + " | " + this.author + " | " + this.year + " | " + this.checkedOut + "\n";
     }
 
     public void checkOutBook() {

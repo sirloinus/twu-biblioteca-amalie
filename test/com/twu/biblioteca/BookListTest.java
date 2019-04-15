@@ -31,10 +31,10 @@ public class BookListTest {
 
     @Test
     public void displayBooksInfo() {
-        String bookListDisplay = "Book Title | Author | Publication Year \n" +
-                "Harry Potter and the Prisoner of Azkaban | JK Rowling | 1999 \n" +
-                "The Lord of the Rings | JRR Tolkien | 1954\n" +
-                "Sum | David Eagleman | 2009 \n";
+        String bookListDisplay = "Book Title | Author | Publication Year | Checked Out\n" +
+                "Harry Potter and the Prisoner of Azkaban | JK Rowling | 1999 | false\n" +
+                "The Lord of the Rings | JRR Tolkien | 1954 | false\n" +
+                "Sum | David Eagleman | 2009 | false\n";
         // Assert.assertEquals(bookListDisplay, bookList.displayBooksInfo());
 
     }
