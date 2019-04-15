@@ -35,11 +35,25 @@ public class Book {
         return this.title + " | " + this.author + " | " + this.year + " | " + this.checkedOut + "\n";
     }
 
-    public void checkOutBook() {
-        this.checkedOut = true;
+//    public void changeCheckedOutStatus() {
+//        this.checkedOut = this.checkedOut ? false : true;
+//    }
+
+    public boolean checkOutBook() {
+        if(this.checkedOut == false){
+            this.checkedOut = true;
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void returnBook() {
-        this.checkedOut = false;
+    public boolean returnBook() {
+        if(this.checkedOut == true) {
+            this.checkedOut = false;
+            return false;
+        } else {
+            return true;
+        }
     }
 }

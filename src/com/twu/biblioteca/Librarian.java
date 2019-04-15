@@ -15,18 +15,21 @@ public class Librarian {
         // add book to user list of books
 
         // change checked out status of book to true
-        String bookTitle = this.getBookTitle();
-        Book book = this.findBook(bookTitle);
-        book.checkOutBook();
-        // System.out.println("******" + book.getTitle() + book.isCheckedOut());
-    }
+        Book book = this.findBook();
+        boolean outcome = book.checkOutBook();
+        String message = outcome ? "Thank you! Enjoy the book." : "Book already checked out of library.";
+        System.out.println(message);    }
 
     public void returnBook(User user) {
         // remove book from user's books
 
         // change checked out status of book to false
-        // book.returnBook();
+        Book book = this.findBook();
+        boolean outcome = book.returnBook();
+        String message = !outcome ? "Successfully returned to library" : "Cannot return as book already in the library.";
+        System.out.println(message);
     }
+
 
     private String getBookTitle() {
         System.out.println("Please enter title of book you would like to checkout.");
@@ -34,7 +37,8 @@ public class Librarian {
         return title;
     }
 
-    private Book findBook(String bookTitle) {
+    private Book findBook() {
+        String bookTitle = this.getBookTitle();
         Book foundBook = bookList.bookCollection.get(bookTitle);
         return foundBook;
     }
