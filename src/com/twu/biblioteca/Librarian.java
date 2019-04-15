@@ -18,16 +18,22 @@ public class Librarian {
         Book book = this.findBook();
         boolean outcome = book.checkOutBook();
         String message = outcome ? "Thank you! Enjoy the book." : "Book already checked out of library.";
-        System.out.println(message);    }
+        System.out.println(message);
+    }
 
     public void returnBook(User user) {
         // remove book from user's books
 
         // change checked out status of book to false
         Book book = this.findBook();
-        boolean outcome = book.returnBook();
-        String message = !outcome ? "Successfully returned to library" : "Cannot return as book already in the library.";
-        System.out.println(message);
+        if(book != null){
+            boolean outcome = book.returnBook();
+            String message = !outcome ? "Successfully returned to library" : "Cannot return as book already in the library.";
+            System.out.println(message);
+        } else {
+            System.out.println("Cannot return as book does not exist.");
+            returnBook(user);
+        }
     }
 
 

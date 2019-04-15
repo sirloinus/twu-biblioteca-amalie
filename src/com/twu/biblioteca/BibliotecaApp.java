@@ -14,8 +14,8 @@ public class BibliotecaApp {
         bookList.addBook(sum);
         Librarian librarian = new Librarian(bookList);
         Menu menu = new Menu(bookList, librarian, user1);
-        biblioteca.welcome();
 
+        biblioteca.welcome();
         menu.start();
     }
 

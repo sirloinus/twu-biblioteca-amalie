@@ -34,12 +34,12 @@ public class Menu {
 
     public void getUserInput() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Choose an option");
+        System.out.println("Choose a menu option");
         String choice = scanner.nextLine();
         try {
             selectOption(Integer.parseInt(choice));
         } catch(Exception e) {
-            System.out.println("Try again");
+            System.out.println("Invalid, try again");
             getUserInput();
         }
     }
