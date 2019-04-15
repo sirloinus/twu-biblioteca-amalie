@@ -32,7 +32,7 @@ public class Librarian {
 
 
     private String getBookTitle() {
-        System.out.println("Please enter title of book you would like to checkout.");
+        System.out.println("Please enter title of book.");
         String title = scanner.nextLine();
         return title;
     }

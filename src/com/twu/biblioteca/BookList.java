@@ -39,7 +39,8 @@ public class BookList {
     }
 
     public void displayBooksInfo() {
-        System.out.println("Book Title | Author | Publication Year | Checked Out\n");
+        System.out.println("Book Title | Author | Publication Year | Checked Out");
+        System.out.println("");
         for(Book book: bookList){
             System.out.println(book.getBookInfo());
         }

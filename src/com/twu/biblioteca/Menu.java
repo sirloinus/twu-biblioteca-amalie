@@ -20,7 +20,7 @@ public class Menu {
     }
 
     public String displayMenu() {
-        String options = "1. View list of books \n" +
+        String options = "1. View list of all books \n" +
                 "2. Checkout a book \n" +
                 "3. Return a book \n" +
                 "4. View list of movies \n" +
@@ -71,13 +71,12 @@ public class Menu {
                 message = "Returning movie";
                 break;
             case 7:
-                message = "Quiting Biblioteca";
+                System.out.println("Quiting Biblioteca");
                 quitApplication();
                 break;
             default:
-                message = "Please select a valid option!";
+                System.out.println("Please select a valid option!");
         }
-        System.out.println(message);
         System.out.println(" ");
         this.displayMenu();
         this.getUserInput();
