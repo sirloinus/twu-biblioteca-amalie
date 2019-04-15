@@ -11,7 +11,7 @@ public class Librarian {
         this.bookList = bookList;
     }
 
-    public void checkOutBook(User user) {
+    public void checkOutItem(User user) {
         // add book to user list of books
 
         // change checked out status of book to true
@@ -21,7 +21,7 @@ public class Librarian {
         System.out.println(message);
     }
 
-    public void returnBook(User user) {
+    public void returnItem(User user) {
         // remove book from user's books
 
         // change checked out status of book to false
@@ -32,10 +32,9 @@ public class Librarian {
             System.out.println(message);
         } else {
             System.out.println("Cannot return as book does not exist.");
-            returnBook(user);
+            returnItem(user);
         }
     }
-
 
     private String getBookTitle() {
         System.out.println("Please enter title of book.");

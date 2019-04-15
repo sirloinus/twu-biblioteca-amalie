@@ -4,16 +4,19 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mock;
 
+import static org.mockito.Mockito.mock;
+
 public class LibrarianTest {
 
+    private Book testBook;
     @Mock private BookList bookList = new BookList();
-    @Mock private Book testBook = new Book("Test", "Me", "2019");
     @Mock private Librarian librarian = new Librarian(bookList);
     @Mock private User user = new User();
 
     @Test
-    public void canCheckoutBook() {
-
+    public void checkoutBookIsTrueWhenBookIsCheckedOut() {
+        testBook = mock(Book.class);
+        librarian.checkOutItem(user);
     }
 
     @Test

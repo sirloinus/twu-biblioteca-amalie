@@ -56,10 +56,10 @@ public class Menu {
                 bookList.displayBooksInfo();
                 break;
             case 2:
-                librarian.checkOutBook(user);
+                librarian.checkOutItem(user);
                 break;
             case 3:
-                librarian.returnBook(user);
+                librarian.returnItem(user);
                 break;
             case 4:
                 message = "Displaying movies...";
