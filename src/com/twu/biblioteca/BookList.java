@@ -21,7 +21,7 @@ public class BookList {
         return bookList;
     }
 
-    public void addBook(Book book){
+    void addBook(Book book){
         if(this.bookCollection.containsKey(book.getTitle())) {
             System.out.println("Already in Biblioteca library!");
         } else {
@@ -30,7 +30,7 @@ public class BookList {
         }
     }
 
-    public void removeBook(String bookTitle) {
+    void removeBook(String bookTitle) {
         if(this.bookCollection.containsKey(bookTitle)) {
             this.bookCollection.remove(bookTitle);
         } else {
@@ -38,11 +38,11 @@ public class BookList {
         }
     }
 
-    public void displayBooksInfo() {
+    void displayBooksInfo() {
         System.out.println("Book Title | Author | Publication Year | Checked Out");
         System.out.println("");
         for(Book book: bookList){
-            System.out.println(book.getBookInfo());
+            System.out.println(book.toString());
         }
     }
 

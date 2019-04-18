@@ -14,12 +14,12 @@ public class Menu {
         this.user = user;
     }
 
-    public void start() {
+    void start() {
         displayMenu();
         getUserInput();
     }
 
-    public String displayMenu() {
+    String displayMenu() {
         String options = "1. View list of all books \n" +
                 "2. Checkout a book \n" +
                 "3. Return a book \n" +
@@ -32,7 +32,7 @@ public class Menu {
     }
 
 
-    public void getUserInput() {
+    private void getUserInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose a menu option");
         String choice = scanner.nextLine();
@@ -44,11 +44,11 @@ public class Menu {
         }
     }
 
-    public void quitApplication() {
+    private void quitApplication() {
         System.exit(0);
     }
 
-    public String selectOption(int option) {
+    String selectOption(int option) {
         String message = " ";
         switch(option) {
             case 1:
@@ -78,8 +78,8 @@ public class Menu {
                 System.out.println("Please select a valid option!");
         }
         System.out.println(" ");
-        this.displayMenu();
-        this.getUserInput();
+        displayMenu();
+        getUserInput();
         return message;
     }
 

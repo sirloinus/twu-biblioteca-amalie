@@ -30,17 +30,21 @@ public class Book {
         return checkedOut;
     }
 
-    public String getBookInfo() {
-
-        return this.title + " | " + this.author + " | " + this.year + " | " + this.checkedOut + "\n";
+    public String toString() {
+        return title + " | " + author + " | " + year + " | " + checkedOut + "\n";
     }
+
+//    public String getBookInfo() {
+//
+//        return this.title + " | " + this.author + " | " + this.year + " | " + this.checkedOut + "\n";
+//    }
 
 //    public void changeCheckedOutStatus() {
 //        this.checkedOut = this.checkedOut ? false : true;
 //    }
 
-    public boolean checkOutBook() {
-        if(this.checkedOut == false){
+    boolean checkOutBook() {
+        if(!this.checkedOut){
             this.checkedOut = true;
             return true;
         } else {
@@ -48,8 +52,8 @@ public class Book {
         }
     }
 
-    public boolean returnBook() {
-        if(this.checkedOut == true) {
+    boolean returnBook() {
+        if(this.checkedOut) {
             this.checkedOut = false;
             return false;
         } else {

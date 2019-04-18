@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mock;
 

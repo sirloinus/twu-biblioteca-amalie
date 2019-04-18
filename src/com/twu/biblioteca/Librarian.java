@@ -11,10 +11,10 @@ public class Librarian {
         this.bookList = bookList;
     }
 
-    public void checkOutItem(User user) {
+    void checkOutItem(User user) {
         // add book to user list of books
 
-        Book book = this.findBook();
+        Book book = findBook();
         if(book != null) {
             boolean outcome = book.checkOutBook();
             checkoutMessage(outcome);
@@ -23,10 +23,10 @@ public class Librarian {
         }
     }
 
-    public void returnItem(User user) {
+    void returnItem(User user) {
         // remove book from user's books
 
-        Book book = this.findBook();
+        Book book = findBook();
         if(book != null){
             boolean outcome = book.returnBook();
             returnMessage(outcome);
@@ -53,7 +53,7 @@ public class Librarian {
     }
 
     private Book findBook() {
-        String bookTitle = this.getBookTitle();
+        String bookTitle = getBookTitle();
         Book foundBook = bookList.bookCollection.get(bookTitle);
         return foundBook;
     }
